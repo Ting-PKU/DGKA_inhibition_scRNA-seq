@@ -7,7 +7,6 @@ library(Seurat)
 get_count <- function(countfile) {
   pbmc <- Read10X(data.dir = paste0("data/",countfile))
   pbmc <- CreateSeuratObject(counts = pbmc,  min.cells = 3, min.features = 200)
-  pbmc[["percent.mt"]] <- PercentageFeatureSet(pbmc, pattern = "^MT")
   pbmc$sampleID <- countfile
   print(countfile)
   return(pbmc)
