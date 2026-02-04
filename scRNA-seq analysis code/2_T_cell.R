@@ -1,12 +1,4 @@
 setwd('~/projects/tumor/')
-Sys.setenv(LD_LIBRARY_PATH="/home/pengt/projects/tools/anaconda3/envs/R4_2/lib/")
-Sys.getenv('LD_LIBRARY_PATH')
-withr::with_makevars(c(PKG_LIBS="-L/home/pengt/projects/tools/anaconda3/envs/R4_2/lib"),
-                     install.packages("Seurat"), assignment="+=")
-withr::with_makevars(c(PKG_LIBS="-L/home/pengt/projects/tools/anaconda3/envs/R4_2/lib"),
-                     install.packages("reticulate"), assignment="+=")
-
-system("ldd /home/pengt/R/x86_64-pc-linux-gnu-library/4.4/harmony/libs/harmony.so")
 library(ggplot2)
 library(Seurat)
 library(harmony)
